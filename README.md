@@ -56,3 +56,57 @@ In the end, you should have 8 files for your functions in your `src` folder (and
 
 ### Writing tests
 
+- Create a `test` folder in which you create a file `create-matrix.spec.js` in which you will put the following code:
+  
+  ````js
+  var expect = require('expect.js');
+  var createMatrix = require('./../src/create-matrix');
+  
+  describe('createMatrix', function() {
+    it('is a function', function() {
+      expect(createMatrix).to.be.a('function');
+    });
+    
+    it('returns a multi-dimensional array', function() {
+      var result = createMatrix(1, 1);
+      expect(result).to.be.an('array');
+      expect(result[0]).to.be.an('array');
+    });
+    
+    it('creates the given amount of entries given by the first argument', function() {
+      var result = createMatrix(3, 3);
+      expect(result.length).to.be(3);
+    });
+    
+    // YOU ;) complete that one
+    it('creates the given amount of entries given by the second argument');
+  });
+  ````
+  
+- Run the following command `npm run test`
+- Complete the missing test of the file
+- Again in the `test` folder, create a file `matrix-increment.spec.js` in which you will put the following code:
+  
+  ````js
+  var expect = require('expect.js');
+  var createMatrix = require('./../src/create-matrix');
+  var matrixIncrement = require('./../src/matrix-increment');
+  
+  describe('matrixIncrement', function() {
+    it('is a function', function() {
+      expect(matrixIncrement).to.be.a('function');
+    });
+
+    it('increments the values of the matrix', function() {
+      var matrix = createMatrix(2, 2);
+      var result = matrixIncrement(matrix);
+      expect(result[0][0]).to.be(1);
+      expect(result[1][1]).to.be(1);
+    });
+  });
+  
+  ````
+  And so on for all the functions :)
+  
+
+
