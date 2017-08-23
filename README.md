@@ -2,7 +2,7 @@
 
 This exercise is aimed to introduce unit testing with [mocha](https://mochajs.org/) and the [module.require](http://devdocs.io/node~6_lts/modules#modules_module_require_id) function from Node.js.
 
-__Note:__ for every steps, make a commit (with the step's name) and push to to the working branch (will be named `feat-test`).
+__Note:__ at the end of __every steps__, build your code, make a commit (with the step's name) and push to to the working branch (will be named `feat-test`).
 
 ## Steps
 
