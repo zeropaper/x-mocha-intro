@@ -37,22 +37,22 @@ If you have doubt about the following tasks, refer to the [x-loader-simulation](
 
 Refactoring is an operation in which the some code is changed without changing its functionnalities.
 
-- For each functions (except `renderTableDom` if you have it) in your `src/index.js`, create a file named after the function and use `require` to load the file.  
-  Example with the `createMatrix` function, you will create a file called `create-matrix.js` (in the `src` folder) in which you will have:
+For each functions (except `renderTableDom` if you have it) in your `src/index.js`, create a file named after the function and use `require` to load the file.  
+Example with the `createMatrix` function, you will create a file called `create-matrix.js` (in the `src` folder) in which you will have:
+
+````js
+module.exports = function createMatrix(rowsCount, columnsCount) {
+  /*... */
+};
+````
+(the `module.exports` make it possible for other files to "require" the function)
+
+and in your `src/index.js` you will have
   
-  ````js
-  module.exports = function createMatrix(rowsCount, columnsCount) {
-    /*... */
-  };
-  ````
-  (the `module.exports` make it possible for other files to "require" the function)
-  
-  and in your `src/index.js` you will have
-    
-  ````js
-  var createMatrix = require('./create-matrix'); // you don't need the '.js' here
-  ````
-  In the end, you should have 8 files for your functions in your `src` folder (and your `index.js`).
+````js
+var createMatrix = require('./create-matrix'); // you don't need the '.js' here
+````
+In the end, you should have 8 files for your functions in your `src` folder (and your `index.js`).
 
 ### Writing tests
 
