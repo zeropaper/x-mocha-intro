@@ -10,10 +10,10 @@ __Note:__ at the end of __every steps__, build your code, make a commit (with th
 
 If you have doubt about the following tasks, refer to the [x-loader-simulation](https://github.com/zeropaper/x-loader-simulation) exercise.
 
-- Create a git branch called `feat-test` (`git checkout -b feat-test`).
+- In the repository of your [x-array-matrix](https://github.com/zeropaper/x-array-matrix) exercise, create a git branch called `feat-test` (`git checkout -b feat-test`).
 - Create a file called `.gitignore` in which you will add a line with `node_modules` (this will prevent your `node_modules` to be added to git)
 - Create a `src` folder and move your `index.js` and `index.html` in it.
-- In the repository of your [x-array-matrix](https://github.com/zeropaper/x-array-matrix) exercise, create a `package.json` (with the right `npm` command).  
+- Create a `package.json` (with the right `npm` command).  
   Answer `mocha` when you will be asked for a "test command" by the wizard.
 - Make sure that your project is "private".
 - Install the following development dependencies
