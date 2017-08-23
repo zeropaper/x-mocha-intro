@@ -1,6 +1,6 @@
 # x-mocha-intro
 
-This exercise is aimed to introduce unit testing with [mocha](https://mochajs.org/) and the [module.require](http://devdocs.io/node~6_lts/modules#modules_module_require_id) function from Node.js.
+This exercise is aimed to introduce unit testing with [mocha](https://mochajs.org/) and the [require](http://devdocs.io/node~6_lts/modules#modules_module_require_id) function from Node.js.
 
 __Note:__ at the end of __every steps__, build your code, make a commit (with the step's name) and push to to the working branch (will be named `feat-test`).
 
@@ -45,6 +45,7 @@ Refactoring is an operation in which the some code is changed without changing i
     /*... */
   };
   ````
+  (the `module.exports` make it possible for other files to "require" the function)
   
   and in your `src/index.js` you will have
     
