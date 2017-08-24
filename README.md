@@ -106,7 +106,62 @@ In the end, you should have 8 files for your functions in your `src` folder (and
   });
   
   ````
-  And so on for all the functions :)
+  And so on for __all__ the functions :) (except the `renderTableDom`).
+
+
+### Travis
+
+- Copy the `.travis.yml` file from the `loader-simulation` exercise in the your `array-matrix` exercise
+- Activate the repository on travis-ci.org
   
 
+### Make it a library
+
+To be able to reuse the array-matrix project functions in other projects in a convenient way:
+
+- Create a file `src/lib.js` which exports an object which has the properties
+- In your `package.json`, change the `main` entry to `src/lib.js`
+- Create a test file for the library (`test/lib.spec.js`) and test that:
+  - The library is an object
+  - Each property of the object is a function
+
+<details>
+<summary>the library</summary>
+
+
+````js
+module.exports = {
+  createMatrix: require('./create-matrix'),
+  matrixFillSequence: require('./matrix-fill-sequence'),
+  // ...
+};
+````
+
+</details>
+
+
+<details>
+<summary>the library test</summary>
+
+
+````js
+var expect = require('expect.js');
+var library = require('./../src/lib');
+describe('array matrix library', function() {
+  it('is an object', function() {
+    expect(library).to.be.an('object');
+  });
+
+  it('has a createMatrix function', function() {
+    expect(library.createMatrix).to.be.an('function');
+  });
+  
+  // ...
+});
+````
+
+</details>
+
+
+### Merging to master
 
