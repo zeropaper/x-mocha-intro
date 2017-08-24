@@ -196,3 +196,13 @@ var createMatrix = require('array-matrix').createMatrix;
 
 ### Merging to master
 
+Make sure that the results of the Travis-CI is green (the tests pass)
+Now that the feature (adding test) is complete, you can to merge it to the master branch.
+
+To do so:
+
+````sh
+git checkout master
+git merge feat-test
+git push origin master
+````
