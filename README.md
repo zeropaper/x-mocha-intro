@@ -120,13 +120,15 @@ In the end, you should have 8 files for your functions in your `src` folder (and
 To be able to reuse the array-matrix project functions in other projects in a convenient way:
 
 - Create a file `src/lib.js` which exports an object which has the properties
-- In your `package.json`, change the `main` entry to `src/lib.js`
 - Create a test file for the library (`test/lib.spec.js`) and test that:
   - The library is an object
   - Each property of the object is a function
+- In your `package.json`
+  - Make sure that the name of the package is `array-matrix`
+  - Change the `main` entry to `src/lib.js`
 
 <details>
-<summary>the library</summary>
+<summary>The library</summary>
 
 
 ````js
@@ -141,7 +143,7 @@ module.exports = {
 
 
 <details>
-<summary>the library test</summary>
+<summary>The library test</summary>
 
 
 ````js
@@ -158,6 +160,35 @@ describe('array matrix library', function() {
   
   // ...
 });
+````
+
+</details>
+
+
+<details>
+<summary>Using the library in a other project</summary>
+
+In the `package.json` of your other project:
+
+
+````js
+//...
+  "dependencies": {
+    "array-matrix": "<your-gh-username>/<name-of-the-repository>"
+//...
+````
+
+__Note:__ It is important that the name of the dependency (here `array-matrix`) matches with the name of your package (`name` property in the `package.json`).
+
+
+In the code of your other project:
+
+
+````js
+var arrayMatrixLib = require('array-matrix');
+var createMatrix = arrayMatrixLib.createMatrix;
+// or
+var createMatrix = require('array-matrix').createMatrix;
 ````
 
 </details>
